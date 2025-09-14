@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+# copy front-end files to the distribution directory
+COPY ./softy-pinko-front-end /var/www/html/softy-pinko-front-end
+
+# copy nginx configuration as the default conf
+COPY ./softy-pinko-front-end.conf /etc/nginx/conf.d/default.conf
+
+# expose suggested port
+EXPOSE 9000
